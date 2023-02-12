@@ -1,0 +1,38 @@
+.main__layout {
+  @apply w-full h-[100vh] flex flex-row gap-0 max-h-[100vh];
+}
+
+.main__layout .sidebar {
+  @apply min-w-[218px] w-[20.5vw] h-full hidden xl:block
+}
+
+.main__layout .main__content {
+  @apply w-full xl:w-[79.5vw] max-h-full overflow-y-scroll bg-[#F9FAFB] py-md px-base
+}
+
+.main__header {
+  @apply flex flex-col gap-y-base
+}
+
+.page__heading {
+  @apply text-dark text-heading font-500
+}
+
+.page__subheading {
+  @apply text-grey
+}
+
+.button__group {
+  @apply w-full h-[40px] overflow-x-scroll flex flex-row gap-0 flex-nowrap
+  rounded-md drop-shadow-xs border border-background
+}
+
+.button__group__item {
+  @apply bg-white h-full px-[16px] py-[10px] first-of-type:rounded-l-md hover:bg-background-tint
+  last-of-type:rounded-r-md text-14 text-dark font-500 border-r-2 border-r-background
+}
+
+.button__group__active__item {
+  @apply bg-background-tint h-full px-[16px] py-[10px] first-of-type:rounded-l-md hover:bg-background-tint
+  last-of-type:rounded-r-md text-14 text-dark font-500 border-r-2 border-r-background
+}
