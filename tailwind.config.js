@@ -21,12 +21,22 @@ module.exports = {
           lineHeight: '24px',
           fontWeight: '500'
         }],
+        'base': ['16px', {
+          lineHeight: '24px',
+          fontWeight: '400'
+        }],
         '14': ['14px', {
-          lineHeight: '20px'
+          lineHeight: '20px',
+          fontWeight: '400'
+        }],
+        '18': ['18px', {
+          lineHeight: '28px',
+          fontWeight: '500'
         }]
       },
       fontWeight: {
-        '500': 500
+        '400': 400,
+        '500': 500,
       },
       gap: {
         'md': '32px',

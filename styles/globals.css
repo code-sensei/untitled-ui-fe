@@ -5,3 +5,11 @@
 main {
   @apply bg-background
 }
+
+section {
+  @apply w-full flex flex-col gap-y-base items-start
+}
+
+.supporting__text {
+  @apply text-14 text-grey
+}

@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import { Sidebar } from '@/components/ui'
+import { Divider, Input, Sidebar } from '@/components/ui'
 import { useState } from 'react'
+import { MailIcon } from '@/components/icons'
 
 interface ButtonTab {
   text: string,
@@ -78,32 +79,80 @@ export default function Home() {
                   >{ item.text }</button>
                 )
               })}
-              {/* <button
-                className={styles.button__group__item}
-              >Profile</button>
-              <button
-                className={styles.button__group__item}
-              >Password</button>
-              <button
-                className={styles.button__group__item}
-              >Team</button>
-              <button
-                className={styles.button__group__item}
-              >Plan</button>
-              <button
-                className={styles.button__group__item}
-              >Billing</button>
-              <button
-                className={styles.button__group__item}
-              >Notifications</button>
-              <button
-                className={styles.button__group__item}
-              >Integrations</button>
-              <button
-                className={styles.button__group__item}
-              >API</button> */}
             </div>
           </header>
+          <section>
+            <div className={styles.section__header}>
+              <p className={styles.section__heading}>Payment Method</p>
+              <p className={styles.section__subheading}>Update your billing details and address.</p>
+            </div>
+            <Divider
+              direction={'horizontal'}
+            />
+            <div className={styles.section__form}>
+              <div className={styles.section__form__left}>
+                <p className={styles.form__heading}>Contact email</p>
+                <p className={styles.form__subheading}>Where should invoices be sent?</p>
+              </div>
+              <div className={styles.section__form__right}>
+                <form className={styles.contact__email__form}>
+                  <div className={styles.form__item}>
+                    <input 
+                      type={'radio'}
+                      name='contact-email'
+                      id='default-contact-email'
+                      className={styles.form__radio__input}
+                    />
+                    <label 
+                      htmlFor='default-contact-email'
+                      className={styles.form__item__label}
+                    >
+                      <p className={styles.form__heading}>Send to my account email</p>
+                      <p className={styles.form__subheading}>olivia@untitledui.com</p>
+                    </label>
+                  </div>
+                  <div className={styles.form__item}>
+                    <input 
+                      type={'radio'}
+                      name='contact-email'
+                      id='alternate-contact-email'
+                      className={styles.form__radio__input}
+                    />
+                    <label 
+                      htmlFor='alternate-contact-email'
+                      className={styles.form__item__label}
+                    >
+                      <p className={styles.form__heading}>Send to an alternative email</p>
+                      <Input 
+                        placeholder="billing@untitledui.com"
+                        icon={<MailIcon />}
+                        className={styles.input__container}
+                      />
+                    </label>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <Divider 
+              direction={'horizontal'}
+            />
+            <div className={styles.section__form}>
+              <div className={styles.section__form__left}>
+                <p className={styles.form__heading}>Card details</p>
+                <p className={styles.form__subheading}>Select default payment method.</p>
+              </div>
+              <div className={styles.section__form__right}>
+                <form className={styles.contact__email__form}>
+                  <div className={styles.form__item}>
+                    
+                  </div>
+                  <div className={styles.form__item}>
+                    
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
     </>

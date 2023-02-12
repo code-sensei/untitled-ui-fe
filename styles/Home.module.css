@@ -11,7 +11,7 @@
 }
 
 .main__header {
-  @apply flex flex-col gap-y-base
+  @apply flex flex-col gap-y-base pb-md
 }
 
 .page__heading {
@@ -27,12 +27,62 @@
   rounded-md drop-shadow-xs border border-background
 }
 
-.button__group__item {
+button.button__group__item {
   @apply bg-white h-full px-[16px] py-[10px] first-of-type:rounded-l-md hover:bg-background-tint
-  last-of-type:rounded-r-md text-14 text-dark font-500 border-r-2 border-r-background
+  last-of-type:rounded-r-md text-14 text-dark font-500 border-r-2 border-r-background min-w-max
 }
 
 .button__group__active__item {
   @apply bg-background-tint h-full px-[16px] py-[10px] first-of-type:rounded-l-md hover:bg-background-tint
   last-of-type:rounded-r-md text-14 text-dark font-500 border-r-2 border-r-background
+}
+
+.section__header {
+  @apply flex flex-col
+}
+
+.section__heading {
+  @apply text-18 text-dark
+}
+
+.section__subheading {
+  @apply text-grey text-14
+}
+
+.section__form {
+  @apply grid grid-cols-1 xl:grid-cols-4 gap-md
+}
+
+.section__form__left {
+  @apply text-14 col-span-1 
+}
+
+.section__form__right {
+  @apply flex flex-col xl:col-span-2 w-full
+}
+
+.form__heading {
+  @apply font-500 text-dark
+}
+
+.form__subheading {
+  @apply font-400 text-grey
+}
+
+.contact__email__form {
+  @apply flex flex-col gap-y-[16px] w-full
+}
+
+.form__item {
+  @apply w-full flex xl:col-span-2 flex-row gap-x-[8px] justify-start items-start
+}
+
+.form__item__label {
+  @apply text-14 align-top w-[319px] xl:w-[488px]
+}
+
+.form__radio__input {
+  @apply h-[18px] w-[18px] appearance-none rounded-full border default:border-grey
+  checked:border-primary checked:after:h-[8px] flex justify-center items-center
+  checked:after:w-[8px] checked:after:bg-primary checked:after:rounded-full
 }
