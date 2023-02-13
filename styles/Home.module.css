@@ -1,3 +1,7 @@
+.pointer {
+  @apply cursor-pointer
+}
+
 .main__layout {
   @apply w-full h-[100vh] flex flex-row gap-0 max-h-[100vh];
 }
@@ -23,18 +27,18 @@
 }
 
 .button__group {
-  @apply w-full h-[40px] overflow-x-scroll flex flex-row gap-0 flex-nowrap
-  rounded-md drop-shadow-xs border border-background
+  @apply w-min h-[40px] overflow-x-scroll flex flex-row gap-0 flex-nowrap
+  rounded-md drop-shadow-xs border border-input-border
 }
 
 button.button__group__item {
   @apply bg-white h-full px-[16px] py-[10px] first-of-type:rounded-l-md hover:bg-background-tint
-  last-of-type:rounded-r-md text-14 text-dark font-500 border-r-2 border-r-background min-w-max
+  last-of-type:rounded-r-md last-of-type:border-r-0 text-14 text-dark font-500 border-r-2 border-r-input-border min-w-max
 }
 
 .button__group__active__item {
   @apply bg-background-tint h-full px-[16px] py-[10px] first-of-type:rounded-l-md hover:bg-background-tint
-  last-of-type:rounded-r-md text-14 text-dark font-500 border-r-2 border-r-background
+  last-of-type:rounded-r-md text-14 text-dark font-500 border-r-2 border-r-input-border
 }
 
 .section__header {
@@ -49,8 +53,8 @@ button.button__group__item {
   @apply text-grey text-14
 }
 
-.section__form {
-  @apply grid grid-cols-1 xl:grid-cols-4 gap-md
+.section__form, .card__section__form {
+  @apply grid grid-cols-1 xl:grid-cols-4 gap-md w-full
 }
 
 .section__form__left {
@@ -59,6 +63,10 @@ button.button__group__item {
 
 .section__form__right {
   @apply flex flex-col xl:col-span-2 w-full
+}
+
+.card__section__form .section__form__right {
+  @apply flex flex-col xl:col-span-3 w-full
 }
 
 .form__heading {
@@ -85,4 +93,58 @@ button.button__group__item {
   @apply h-[18px] w-[18px] appearance-none rounded-full border default:border-grey
   checked:border-primary checked:after:h-[8px] flex justify-center items-center
   checked:after:w-[8px] checked:after:bg-primary checked:after:rounded-full
+}
+
+.card {
+  @apply flex flex-row gap-x-base justify-start items-start bg-white w-full h-[100px]
+  border border-input-border rounded-md p-[16px] pr-[36px] text-14 relative
+}
+
+.active__card {
+  @apply flex flex-row gap-x-base justify-start items-start bg-primary-fade w-full h-[100px]
+  border border-primary rounded-md p-[16px] pr-[36px] text-14 relative
+}
+
+.card__details {
+  @apply flex flex-col gap-y-[8px]
+}
+
+.card__number {
+  @apply font-500 text-dark
+}
+
+.active__card .card__number {
+  @apply font-500 text-[#53389E]
+}
+
+.card__exp {
+  @apply font-400 text-grey
+}
+
+.active__card .card__exp {
+  @apply font-400 text-[#7F56D9]
+}
+
+.card__actions {
+  @apply flex flex-row gap-x-3
+}
+
+.card__set__as__default {
+  @apply text-grey font-500 bg-transparent
+}
+
+.active__card .card__set__as__default {
+  @apply text-[#9E77ED] font-500 bg-transparent
+}
+
+.card__edit {
+  @apply text-primary font-500 bg-transparent
+}
+
+.card__radio__button {
+  @apply appearance-none absolute top-4 right-4 border h-[18px] aspect-square rounded-full
+  flex justify-center items-center overflow-hidden cursor-pointer
+  default:border-input-border
+  checked:border-primary checked:after:h-full checked:after:w-full checked:after:bg-primary
+  checked:after:bg-check checked:after:bg-center checked:after:bg-no-repeat
 }

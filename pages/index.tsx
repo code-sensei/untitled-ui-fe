@@ -2,11 +2,17 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { Divider, Input, Sidebar } from '@/components/ui'
 import { useState } from 'react'
-import { MailIcon } from '@/components/icons'
+import { MailIcon, MastercardIcon, VisaIcon } from '@/components/icons'
 
 interface ButtonTab {
   text: string,
   active: boolean
+}
+
+interface Card {
+  type: 'Visa' | 'Mastercard',
+  last4: string,
+  expiry: string
 }
 
 export default function Home() {
@@ -49,6 +55,21 @@ export default function Home() {
       active: false
     },
   ])
+
+  const [ cards, setCards ] = useState<Card[]>([
+    {
+      type: 'Visa',
+      last4: '1234',
+      expiry: '06/2024'
+    },
+    {
+      type: 'Mastercard',
+      last4: '1234',
+      expiry: '06/2024'
+    }
+  ])
+
+  const [ selectedCard, setSelectedCard ] = useState<number>(0);
 
   return (
     <>
@@ -136,16 +157,54 @@ export default function Home() {
             <Divider 
               direction={'horizontal'}
             />
-            <div className={styles.section__form}>
+            <div className={styles.card__section__form}>
               <div className={styles.section__form__left}>
                 <p className={styles.form__heading}>Card details</p>
                 <p className={styles.form__subheading}>Select default payment method.</p>
               </div>
               <div className={styles.section__form__right}>
                 <form className={styles.contact__email__form}>
-                  <div className={styles.form__item}>
-                    
-                  </div>
+                  { cards.map((card, index) => {
+                    return (
+                      <div 
+                        className={`${styles.form__item} ${styles.pointer}`}
+                        key={`card-${index}`}   
+                        onClick={() => setSelectedCard(index)}
+                      >
+                        <div
+                          className={
+                            selectedCard === index ? 
+                            styles.active__card :
+                            styles.card
+                          }
+                        >
+                          { card.type === 'Visa' && <VisaIcon /> }
+                          { card.type === 'Mastercard' && <MastercardIcon /> }
+                          <div className={styles.card__details}>
+                            <div>
+                              <p className={styles.card__number}>{ card.type } ending in { card.last4 }</p>
+                              <p className={styles.card__exp}>Expiry { card.expiry }</p>
+                            </div>
+                            <div className={styles.card__actions}>
+                              <button
+                                className={styles.card__set__as__default}
+                              >Set as default</button>
+                              <button
+                                className={styles.card__edit}
+                              >Edit</button>
+                            </div>
+                          </div>
+                          <input 
+                            type={'radio'}
+                            name='card'
+                            id="visa-card"
+                            checked={ selectedCard === index }
+                            className={styles.card__radio__button}
+                          />
+                        </div>
+                      </div>
+                    )
+                  })}
                   <div className={styles.form__item}>
                     
                   </div>

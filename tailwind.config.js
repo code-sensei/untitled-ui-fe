@@ -5,10 +5,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'check': 'url(../public/icons/check.svg)'
+      },
       colors: {
         'grey': '#667085',
         'dark': '#344054',
         'primary': '#6941C6',
+        'primary-fade': '#F9F5FF',
         'background': '#F5F5F5',
         'background-tint': '#F9FAFB',
         'input-border': '#D0D5DD'
