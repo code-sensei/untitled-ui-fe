@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
        <nav className={navbar.navbar__container}>
         <Image 
-          src={'images/Logo.svg'}
+          src={'/images/Logo.svg'}
           height={32}
           width={142}
           alt={'logo'}

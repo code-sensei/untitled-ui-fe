@@ -57,7 +57,7 @@ const Sidebar = ({...props}) => {
     return (
         <div className={styles.sidebar__container}>
             <Image 
-                src={'images/Logo.svg'}
+                src={'/images/Logo.svg'}
                 height={32}
                 width={143}
                 alt=""
@@ -99,7 +99,7 @@ const Sidebar = ({...props}) => {
                 </div>
                 <div className={styles.new__feature__image__container}>
                     <Image 
-                        src={'images/nav-featured-card-image.svg'}
+                        src={'/images/nav-featured-card-image.png'}
                         height={136}
                         width={215}
                         alt=""
@@ -128,7 +128,7 @@ const Sidebar = ({...props}) => {
                 <Image 
                     height={40}
                     width={40}
-                    src={'images/account-avatar.svg'}
+                    src={'/images/account-avatar.svg'}
                     alt="user avatar"
                     role={'presentation'}
                     className={styles.account__avatar}
