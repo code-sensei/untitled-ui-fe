@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'check': 'url(../public/icons/check.svg)'
+        'check': 'url(../public/icons/check.svg)',
+        'check-primary': 'url(../public/icons/check-primary.svg)',
       },
       colors: {
         'grey': '#667085',

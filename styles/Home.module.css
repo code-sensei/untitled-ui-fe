@@ -175,13 +175,13 @@ button.button__group__item {
 }
 
 .billing__table thead tr th {
-  @apply py-3 px-6 min-h-[44px] bg-background-tint border border-r-0 border-l-0 border-b-input-border
+  @apply py-3 px-6 min-h-[44px] bg-background-tint border border-r-0 border-l-0 border-t-0 border-b-input-border
   text-14 text-grey font-500
 }
 
 .billing__table tr td{
-  @apply border border-r-0 border-l-0 border-b-input-border py-3 px-6 h-[72px] text-grey font-400 text-14
-  first-of-type:col-span-3 
+  @apply border-b py-3 px-6 h-[72px] text-grey font-400 text-14
+  first-of-type:col-span-3 hover:bg-background-tint
 }
 
 .invoice__header, .invoice__data__item {
@@ -192,12 +192,12 @@ button.button__group__item {
   @apply h-[18px] w-[18px] appearance-none border rounded-md
   flex justify-center items-center overflow-hidden cursor-pointer
   default:border-input-border
-  checked:border-primary checked:after:h-full checked:after:w-full checked:after:bg-primary
-  checked:after:bg-check checked:after:bg-center checked:after:bg-no-repeat
+  checked:border-primary checked:after:h-full checked:after:w-full checked:after:bg-primary-fade
+  checked:after:bg-check-primary checked:after:bg-center checked:after:bg-no-repeat checked:after:text-primary
 }
 
 .action__item {
-  @apply pointer
+  @apply pointer !flex justify-center items-center
 }
 
 .hidden__on__mobile {
