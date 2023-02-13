@@ -197,7 +197,7 @@ button.button__group__item {
 }
 
 .action__item {
-  @apply pointer !flex justify-center items-center
+  @apply pointer xl:!flex justify-center items-center
 }
 
 .hidden__on__mobile {

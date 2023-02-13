@@ -394,7 +394,7 @@ export default function Home() {
                             }
                           </div>}
                         </td>
-                        <td className={`${styles.hidden__on__mobile} ${styles.action__item}`}>
+                        <td className={`${styles.action__item} ${styles.hidden__on__mobile}`}>
                           <DownloadCloudIcon />
                         </td>
                       </tr>
