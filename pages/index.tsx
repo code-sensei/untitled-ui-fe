@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from 'styles/Home.module.css'
-import { Divider, Input, Sidebar, StatusBadge } from '../components/ui'
+import { Divider, Input, Sidebar, StatusBadge } from '@/components/ui'
 import { useState } from 'react'
 import { ArrowDownIcon, DownloadCloudIcon, MailIcon, MastercardIcon, PlusIcon, VisaIcon } from '../components/icons'
 
