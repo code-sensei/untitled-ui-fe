@@ -27,7 +27,7 @@
 }
 
 .button__group {
-  @apply w-min h-[40px] overflow-x-scroll flex flex-row gap-0 flex-nowrap
+  @apply w-min max-w-sm xl:max-w-full h-[40px] overflow-x-scroll flex flex-row gap-0 flex-nowrap
   rounded-md drop-shadow-xs border border-input-border
 }
 
