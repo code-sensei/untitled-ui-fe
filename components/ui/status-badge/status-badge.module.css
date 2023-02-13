@@ -1,0 +1,11 @@
+.status__badge__container {
+    @apply  h-full w-full flex justify-start items-center
+}
+
+.paid__status {
+    @apply h-8 min-w-[55px] bg-[#ECFDF3] rounded-[16px] flex flex-row gap-x-[8px] py-[2px] px-[10px] justify-center items-center
+}
+
+.paid__text {
+    @apply text-success
+}

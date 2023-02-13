@@ -1,0 +1,72 @@
+.sidebar__container {
+    @apply bg-white py-md px-base h-full flex flex-col gap-y-base justify-items-start 
+    items-start overflow-y-scroll appearance-none border-r-[2px] border-r-[#EAECF0]
+}
+
+.sidebar__logo {
+    
+}
+
+.navigation__container {
+    @apply w-full flex flex-col gap-y-[4px] justify-center items-start
+}
+
+.new__feature__container {
+    @apply bg-background-tint rounded-md py-[20px] px-[15px] flex flex-col gap-y-4 
+}
+
+.new__feature__title {
+    @apply text-dark text-[14px] font-500
+}
+
+.new__feature__subtext {
+    @apply text-grey text-[14px]
+}
+
+.new__feature__image__container {
+    @apply relative
+}
+
+.new__feature__image {
+    @apply rounded-md
+}
+
+.new__feature__image__play__button {
+    @apply absolute bottom-[12px] left-[12px]
+}
+
+.new__feature__action__container {
+    @apply flex flex-row gap-x-[12px] text-14
+}
+
+.new__feature__dismiss__action {
+    @apply text-grey
+}
+
+.new__feature__positive__action {
+    @apply text-primary
+}
+
+.account__container {
+    @apply w-full grid grid-cols-12 gap-x-[8px] relative
+}
+
+.account__avatar {
+    @apply col-span-2 h-[40px] w-[40px] rounded-full
+}
+
+.account__details {
+    @apply col-span-10 flex flex-col justify-center items-start gap-y-0
+}
+
+.account__name {
+    @apply font-500 text-dark p-0 m-0 text-14
+}
+
+.account__email {
+    @apply text-grey p-0 m-0 text-14
+}
+
+.account__logout {
+    @apply col-span-2 absolute top-0 right-0
+}

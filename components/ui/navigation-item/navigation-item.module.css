@@ -1,0 +1,24 @@
+.navigation__item {
+    @apply w-full grid grid-cols-12 gap-x-[12px] py-[10px] px-[15px] 
+    justify-items-start items-center hover:bg-background-tint
+    cursor-pointer rounded-md
+}
+
+.active__navigation__item {
+    @apply w-full grid grid-cols-12 gap-x-[12px] py-[10px] px-[15px] 
+    justify-items-start items-center bg-background-tint
+    cursor-pointer rounded-md
+}
+
+.navigation__item__icon {
+    @apply col-span-2
+}
+
+.navigation__item__text {
+    @apply col-span-8 text-dark font-500
+}
+
+.navigation__item__action {
+    @apply col-span-2 w-[36px] h-[24px] rounded-full bg-background-tint 
+    text-center text-14
+}

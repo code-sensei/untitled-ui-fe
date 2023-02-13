@@ -1,0 +1,7 @@
+.horizontal__divider {
+    @apply w-full bg-[#EAECF0] h-[1px] py-[1px]
+}
+
+.vertical__divider {
+    @apply h-full bg-[#EAECF0] w-[1px]
+}
