@@ -148,3 +148,86 @@ button.button__group__item {
   checked:border-primary checked:after:h-full checked:after:w-full checked:after:bg-primary
   checked:after:bg-check checked:after:bg-center checked:after:bg-no-repeat
 }
+
+.add__new__card__button {
+  @apply flex flex-row gap-x-[12px] text-14 text-grey font-500
+}
+
+.billing__section__header {
+  @apply w-full flex flex-col xl:flex-row gap-y-[12px] justify-start xl:justify-between  items-start xl:items-center
+}
+
+.download__all__button {
+  @apply flex flex-row gap-x-2 border border-input-border text-grey font-500 bg-white text-14
+  px-[16px] py-[10px] rounded-md
+}
+
+.billing__table__container {
+  @apply w-full rounded-md overflow-x-hidden overflow-y-scroll border border-input-border
+}
+
+.billing__table {
+  @apply table-auto w-full bg-white rounded-md border-collapse overflow-x-scroll
+}
+
+.billing__table thead  {
+  @apply text-left text-14 text-grey font-500 py-3 px-6 min-h-[44px]
+}
+
+.billing__table thead tr th {
+  @apply py-3 px-6 min-h-[44px] bg-background-tint border border-r-0 border-l-0 border-b-input-border
+  text-14 text-grey font-500
+}
+
+.billing__table tr td{
+  @apply border border-r-0 border-l-0 border-b-input-border py-3 px-6 h-[72px] text-grey font-400 text-14
+  first-of-type:col-span-3 
+}
+
+.invoice__header, .invoice__data__item {
+  @apply flex flex-row gap-x-3 justify-start items-center
+}
+
+.billing__checkbox {
+  @apply h-[18px] w-[18px] appearance-none border rounded-md
+  flex justify-center items-center overflow-hidden cursor-pointer
+  default:border-input-border
+  checked:border-primary checked:after:h-full checked:after:w-full checked:after:bg-primary
+  checked:after:bg-check checked:after:bg-center checked:after:bg-no-repeat
+}
+
+.action__item {
+  @apply pointer
+}
+
+.hidden__on__mobile {
+  @apply hidden xl:table-cell
+}
+
+.users__on__plan__container {
+  @apply flex flex-row gap-0 justify-start items-center relative
+}
+
+.user__on__plan {
+  @apply relative first-of-type:right-0 h-[30px] w-[30px] pointer
+}
+
+.user__on__plan:nth-of-type(2) {
+  @apply right-2
+}
+
+.user__on__plan:nth-of-type(3) {
+  @apply right-4
+}
+
+.user__on__plan:nth-of-type(4) {
+  @apply right-6
+}
+
+.user__on__plan:nth-of-type(5) {
+  @apply right-8
+}
+
+.excess__users {
+  @apply relative right-10 bg-background-tint h-[30px] w-[30px] rounded-full flex justify-center items-center
+}

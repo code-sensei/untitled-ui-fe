@@ -15,7 +15,8 @@ module.exports = {
         'primary-fade': '#F9F5FF',
         'background': '#F5F5F5',
         'background-tint': '#F9FAFB',
-        'input-border': '#D0D5DD'
+        'input-border': '#D0D5DD',
+        'success': '#027A48'
       },
       fontSize: {
         'heading': ['30px', {

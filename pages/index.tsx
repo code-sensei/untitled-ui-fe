@@ -1,8 +1,9 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
-import { Divider, Input, Sidebar } from '@/components/ui'
+import { Divider, Input, Sidebar, StatusBadge } from '@/components/ui'
 import { useState } from 'react'
-import { MailIcon, MastercardIcon, VisaIcon } from '@/components/icons'
+import { ArrowDownIcon, DownloadCloudIcon, MailIcon, MastercardIcon, PlusIcon, VisaIcon } from '@/components/icons'
 
 interface ButtonTab {
   text: string,
@@ -13,6 +14,14 @@ interface Card {
   type: 'Visa' | 'Mastercard',
   last4: string,
   expiry: string
+}
+
+export interface BillingItem {
+  invoice: string,
+  amount: string,
+  date: string,
+  status: "Paid" | "Unpaid",
+  usersOnPlan: string[]
 }
 
 export default function Home() {
@@ -69,6 +78,97 @@ export default function Home() {
     }
   ])
 
+  const [ billingItems, setBillingitems ] = useState<BillingItem[]>([
+    {
+      invoice: 'Basic Plan – Dec 2022',
+      amount: 'USD $10.00',
+      date: 'Dec 1, 2022',
+      status: 'Paid',
+      usersOnPlan: [
+        '/images/avatars/avatar-1.svg',
+        '/images/avatars/avatar-2.svg',
+        '/images/avatars/avatar-3.svg',
+        '/images/avatars/avatar-4.svg',
+        '/images/avatars/avatar-5.svg',
+        '/images/avatars/avatar-1.svg',
+        '/images/avatars/avatar-1.svg',
+      ]
+    },
+    {
+      invoice: 'Basic Plan – Nov 2022',
+      amount: 'USD $10.00',
+      date: 'Nov 1, 2022',
+      status: 'Paid',
+      usersOnPlan: [
+        '/images/avatars/avatar-1.svg',
+        '/images/avatars/avatar-2.svg',
+        '/images/avatars/avatar-3.svg',
+        '/images/avatars/avatar-4.svg',
+        '/images/avatars/avatar-5.svg',
+        '/images/avatars/avatar-1.svg',
+      ]
+    },
+    {
+      invoice: 'Basic Plan – Oct 2022',
+      amount: 'USD $10.00',
+      date: 'Oct 1, 2022',
+      status: 'Paid',
+      usersOnPlan: [
+        '/images/avatars/avatar-1.svg',
+        '/images/avatars/avatar-2.svg',
+        '/images/avatars/avatar-3.svg',
+        '/images/avatars/avatar-4.svg',
+        '/images/avatars/avatar-5.svg'
+      ]
+    },
+    {
+      invoice: 'Basic Plan – Sep 2022',
+      amount: 'USD $10.00',
+      date: 'Sep 1, 2022',
+      status: 'Paid',
+      usersOnPlan: [
+        '/images/avatars/avatar-1.svg',
+        '/images/avatars/avatar-2.svg',
+        '/images/avatars/avatar-3.svg'
+      ]
+    },
+    {
+      invoice: 'Basic Plan – Aug 2022',
+      amount: 'USD $10.00',
+      date: 'Aug 1, 2022',
+      status: 'Paid',
+      usersOnPlan: [
+        '/images/avatars/avatar-1.svg',
+        '/images/avatars/avatar-2.svg',
+        '/images/avatars/avatar-3.svg',
+        '/images/avatars/avatar-4.svg'
+      ]
+    },
+    {
+      invoice: 'Basic Plan – Jul 2022',
+      amount: 'USD $10.00',
+      date: 'Jul 1, 2022',
+      status: 'Paid',
+      usersOnPlan: [
+        '/images/avatars/avatar-1.svg',
+        '/images/avatars/avatar-2.svg',
+        '/images/avatars/avatar-3.svg',
+        '/images/avatars/avatar-4.svg'
+      ]
+    },
+    {
+      invoice: 'Basic Plan – Jun 2022',
+      amount: 'USD $10.00',
+      date: 'Jun 1, 2022',
+      status: 'Paid',
+      usersOnPlan: [
+        '/images/avatars/avatar-1.svg',
+        '/images/avatars/avatar-2.svg',
+        '/images/avatars/avatar-3.svg'
+      ]
+    }
+  ])
+
   const [ selectedCard, setSelectedCard ] = useState<number>(0);
 
   return (
@@ -104,7 +204,7 @@ export default function Home() {
           </header>
           <section>
             <div className={styles.section__header}>
-              <p className={styles.section__heading}>Payment Method</p>
+              <p className={styles.section__heading}>Payment method</p>
               <p className={styles.section__subheading}>Update your billing details and address.</p>
             </div>
             <Divider
@@ -206,10 +306,102 @@ export default function Home() {
                     )
                   })}
                   <div className={styles.form__item}>
-                    
+                    <button
+                      className={styles.add__new__card__button}
+                    >
+                      <PlusIcon />
+                      <p className={styles.add__card__text}>Add new payment method</p>
+                    </button>
                   </div>
                 </form>
               </div>
+            </div>
+          </section>
+          <section>
+            <div className={styles.billing__section__header}>
+              <p className={styles.section__heading}>Billing history</p>
+              <button
+                className={styles.download__all__button}
+              >
+                <DownloadCloudIcon />
+                <p>Download All</p>
+              </button>
+            </div>
+            <div className={styles.billing__table__container}>
+              <table className={styles.billing__table}>
+                <thead>
+                  <tr>
+                    <th>
+                      <div className={styles.invoice__header}>
+                        <input 
+                          type={'checkbox'}
+                          name="select-all-billing"
+                          id='select-all-billing'
+                          className={styles.billing__checkbox}
+                        />
+                        <p className={styles.header__text}>Invoice</p>
+                        <ArrowDownIcon />
+                      </div>
+                    </th>
+                    <th>Amount</th>
+                    <th className={styles.hidden__on__mobile}>Date</th>
+                    <th className={styles.hidden__on__mobile}>Status</th>
+                    <th className={styles.hidden__on__mobile}>Users on plan</th>
+                    <th className={styles.hidden__on__mobile}></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  { billingItems.map((item, index) => {
+                    return (
+                      <tr key={`billing-item-${index}`}>
+                        <td
+                          className={styles.invoice__data__item}
+                        >
+                          <input 
+                            type={'checkbox'}
+                            name="select-all-billing"
+                            id='select-all-billing'
+                            className={styles.billing__checkbox}
+                          />
+                          { item.invoice }
+                        </td>
+                        <td>{ item.amount }</td>
+                        <td className={styles.hidden__on__mobile}>{ item.date }</td>
+                        <td className={styles.hidden__on__mobile}>
+                          <StatusBadge 
+                            status={item.status}
+                          />
+                        </td>
+                        <td className={styles.hidden__on__mobile}>
+                          { item.usersOnPlan && <div className={styles.users__on__plan__container}>
+                            { item.usersOnPlan.slice(0, 5).map((user, index) => {
+                              return (
+                                <Image 
+                                  key={`user-${index}`}
+                                  src={user}
+                                  height={24}
+                                  width={24}
+                                  alt={`user-${index}`}
+                                  role={'presentation'}
+                                  className={styles.user__on__plan}
+                                />
+                              )
+                            })}
+                            { item.usersOnPlan.length > 5 && 
+                              <div className={styles.excess__users}>
+                                +{ item.usersOnPlan.length - 5 }
+                              </div>
+                            }
+                          </div>}
+                        </td>
+                        <td className={`${styles.hidden__on__mobile} ${styles.action__item}`}>
+                          <DownloadCloudIcon />
+                        </td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
             </div>
           </section>
         </div>
