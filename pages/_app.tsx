@@ -3,7 +3,7 @@ import navbar from 'styles/navbar.module.css'
 import type { AppProps } from 'next/app'
 import { Inter } from '@next/font/google'
 import Image from 'next/image'
-import { MenuIcon } from 'components/icons'
+import { MenuIcon } from '../components/icons'
 
 const inter = Inter({ subsets: ['latin'] })
 
